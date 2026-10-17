@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# apify raw output (contém URLs temporárias e dados brutos)
+/scripts/output/*
+!/scripts/output/.gitkeep

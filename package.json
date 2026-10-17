@@ -1,14 +1,24 @@
 {
-  "name": "lequartiee",
+  "name": "lequarttie",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "apify:scrape": "tsx scripts/apify-scrape.ts",
+    "apify:prepare": "tsx scripts/prepare-candidates.ts",
+    "images:import": "tsx scripts/import-images.ts",
+    "instagram:sync": "npm run apify:scrape && npm run apify:prepare && npm run images:import"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.27",
+    "lucide-react": "^1.59.0",
+    "motion": "^14.3.0",
     "next": "16.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0"
@@ -18,10 +28,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "apify-client": "^2.25.0",
     "babel-plugin-react-compiler": "1.0.0",
+    "dotenv": "^18.0.8",
     "eslint": "^9",
     "eslint-config-next": "16.4.2",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }

@@ -1,0 +1,335 @@
+{
+  "authorization": {
+    "status": "pending",
+    "notes": "Alterar para \"granted\" somente após autorização formal da Lequarttiê."
+  },
+  "items": [
+    {
+      "key": "DZVxtKIgeBQ-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "detalhe",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DZVxtKIgeBQ-1",
+      "categories": [
+        "feminino",
+        "loja",
+        "detalhe",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DbQkwNokc24-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "Ddmo-StgcgT-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "detalhe",
+        "campanha",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DbJmR26gX_5-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DYF8PuIAYeN-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "detalhe",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DeKsDX4gQsC-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DVwuNLygbrz-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "Ddb_eyRAzyR-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "campanha",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DbMIGBmAQ3X-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DbohBQMAQla-0",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Dois homens usando jaquetas escuras em um retrato masculino",
+      "featured": false
+    },
+    {
+      "key": "DbohBQMAQla-1",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Dois homens usando jaquetas escuras em retrato preto e branco",
+      "featured": false
+    },
+    {
+      "key": "DbdgNNRjtY0-0",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Homem vestindo polo clara e calça bege ao lado de um cachorro",
+      "featured": true
+    },
+    {
+      "key": "DbdgNNRjtY0-1",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Homem vestindo polo clara e calça bege sentado em cadeira de madeira",
+      "featured": false
+    },
+    {
+      "key": "DbdgNNRjtY0-2",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Homem vestindo polo clara em composição casual sobre um sofá",
+      "featured": false
+    },
+    {
+      "key": "DbdgNNRjtY0-3",
+      "categories": [
+        "masculino",
+        "campanha",
+        "look"
+      ],
+      "alt": "Homem vestindo polo clara e calça bege com um cachorro dálmata",
+      "featured": false
+    },
+    {
+      "key": "DbQlTV8kZZQ-0",
+      "categories": [
+        "loja"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DYFM6erDsl1-0",
+      "categories": [
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DXWwp44jpxA-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DanvX50EeBT-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "Dd91FurgWBt-0",
+      "categories": [
+        "loja",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DXKrerZAR3v-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "Dd4wJxWAbgH-0",
+      "categories": [
+        "loja",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DdttBPckavd-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DdtsvFGx9SZ-0",
+      "categories": [
+        "loja",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DYiPg-wAXcv-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DXuDMNlDg45-0",
+      "categories": [
+        "loja",
+        "campanha"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DczQrONgGrs-0",
+      "categories": [
+        "loja",
+        "detalhe",
+        "campanha",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DdcAroLm0L5-0",
+      "categories": [
+        "loja",
+        "look",
+        "novidades"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DYFM6erDsl1-1",
+      "categories": [
+        "loja",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DXhL0S_DmOp-0",
+      "categories": [
+        "loja",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    },
+    {
+      "key": "DXPINYJDusk-0",
+      "categories": [
+        "feminino",
+        "loja",
+        "campanha",
+        "look"
+      ],
+      "alt": "",
+      "featured": false
+    }
+  ]
+}

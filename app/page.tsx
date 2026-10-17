@@ -1,69 +1,81 @@
-import Image from "next/image";
+import { About } from "@/components/sections/About";
+import { Brands } from "@/components/sections/Brands";
+import { CallToAction } from "@/components/sections/CallToAction";
+import { Editorial } from "@/components/sections/Editorial";
+import { Feminine } from "@/components/sections/Feminine";
+import { Hero } from "@/components/sections/Hero";
+import { Location } from "@/components/sections/Location";
+import { Lookbook } from "@/components/sections/Lookbook";
+import { Masculine } from "@/components/sections/Masculine";
+import { News } from "@/components/sections/News";
+import { Reviews } from "@/components/sections/Reviews";
+import { Store } from "@/components/sections/Store";
+import { brands } from "@/data/brands";
+import { reviews } from "@/data/reviews";
+import { catalog } from "@/lib/catalog";
+import { findMedia, pickMedia, recentMedia, type PickMediaOptions } from "@/lib/media";
+import type { MediaCategory, Visual } from "@/lib/types";
 
 export default function Home() {
+  const usedMediaIds = new Set<string>();
+
+  const reserve = <T extends Visual>(visual: T) => {
+    if (visual.kind === "photo") usedMediaIds.add(visual.id);
+    return visual;
+  };
+
+  const pickUnique = (
+    category: MediaCategory,
+    count: number,
+    options: Omit<PickMediaOptions, "excludeIds"> = {},
+  ) => pickMedia(category, count, { ...options, excludeIds: usedMediaIds }).map(reserve);
+
+  // Hero: prefere uma campanha exclusiva de cada gênero e reserva fotos diferentes.
+  const campaignOrLook = (gender: "feminino" | "masculino") => {
+    const otherGender = gender === "feminino" ? "masculino" : "feminino";
+    const campaign =
+      findMedia("campanha", {
+        excludeIds: usedMediaIds,
+        requiredCategories: [gender],
+        excludedCategories: [otherGender],
+      }) ??
+      findMedia("campanha", {
+        excludeIds: usedMediaIds,
+        requiredCategories: [gender],
+      });
+
+    return reserve(campaign ?? pickMedia(gender, 1, { excludeIds: usedMediaIds })[0]);
+  };
+
+  const campaigns = [
+    { id: "feminino", label: "Coleção feminina", visual: campaignOrLook("feminino") },
+    { id: "masculino", label: "Coleção masculina", visual: campaignOrLook("masculino") },
+  ];
+  const heroMediaIds = new Set(usedMediaIds);
+
+  const masculine = pickUnique("masculino", 5);
+  const feminine = pickUnique("feminino", 5);
+  const aboutMain = pickUnique("loja", 1)[0];
+  const aboutDetail = pickUnique("detalhe", 1, { tones: ["taupe"] })[0];
+  const editorial = pickUnique("campanha", 3, { tones: ["graphite", "taupe", "ivory"] });
+  const news = recentMedia(4, { excludeIds: usedMediaIds });
+  news.forEach((item) => usedMediaIds.add(item.id));
+  const store = pickUnique("loja", 3, { tones: ["graphite", "ivory", "taupe"] });
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Hero campaigns={campaigns} />
+      <About main={aboutMain} detail={aboutDetail} />
+      <Feminine visuals={feminine} />
+      <Masculine visuals={masculine} />
+      <Lookbook looks={catalog.listLooks({ excludeMediaIds: heroMediaIds })} />
+      <Editorial visuals={editorial} />
+      <News items={news} />
+      <Brands brands={brands} />
+      <Store visuals={store} />
+      <Reviews reviews={reviews} />
+      <CallToAction />
+      <Location />
+    </>
   );
 }
